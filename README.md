@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+Traqueur de Lecture
+Bienvenue dans Traqueur de Lecture, une application web qui vous permet de gérer efficacement votre liste de livres. Recherchez des livres, ajoutez-les à vos favoris, indiquez ceux que vous souhaitez lire, et filtrez votre collection selon vos préférences.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fonctionnalités
+Recherche de livres : Trouvez vos livres préférés en recherchant par titre.
+Gestion des favoris : Ajoutez des livres à votre liste de favoris pour un accès rapide.
+Liste de souhaits : Marquez les livres que vous souhaitez lire plus tard.
+Filtres avancés : Filtrez les livres par favoris, souhaits, ou les deux simultanément.
+Indicateurs visuels : Identifiez rapidement les livres favoris et ceux que vous souhaitez lire grâce à des badges.
+Interface réactive : Profitez d'une expérience utilisateur fluide sur tous les appareils grâce à un design responsive.
+Persistance des données : Vos favoris et souhaits sont sauvegardés localement pour une récupération ultérieure.
+Aperçu
 
-## Available Scripts
+Prérequis
+Assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-In the project directory, you can run:
+Node.js (version 12 ou supérieure)
+npm ou Yarn
+Installation
+Cloner le dépôt
 
-### `npm start`
+bash
+Copier le code
+git clone https://github.com/votre-utilisateur/votre-depot.git
+cd votre-depot
+Installer les dépendances
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Avec npm :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+bash
+Copier le code
+npm install
+Ou avec Yarn :
 
-### `npm test`
+bash
+Copier le code
+yarn install
+Lancer l'application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Avec npm :
 
-### `npm run build`
+bash
+Copier le code
+npm start
+Ou avec Yarn :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copier le code
+yarn start
+Accéder à l'application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ouvrez votre navigateur et allez sur http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Utilisation
+Rechercher un livre
 
-### `npm run eject`
+Utilisez la barre de recherche en haut pour trouver un livre par son titre.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ajouter un livre aux favoris
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cliquez sur le bouton "Ajouter aux favoris" sur la carte du livre pour l'ajouter à vos favoris. Le bouton deviendra "Retirer des favoris" une fois le livre ajouté.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Indiquer un livre à lire
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Cliquez sur le bouton "Ajouter aux souhaits" pour marquer un livre que vous souhaitez lire plus tard. Le bouton deviendra "Retirer des souhaits" une fois le livre ajouté.
 
-## Learn More
+Filtrer les livres
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Utilisez les boutons de filtre pour afficher uniquement vos favoris, vos souhaits, ou les deux :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Filtrer selon mes favoris
+Filtrer selon mes souhaits
+Visualiser les statuts des livres
 
-### Code Splitting
+Chaque livre affiche des badges pour indiquer s'il est dans vos favoris, vos souhaits, ou les deux.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Structure du Projet
+App.js : Composant principal qui gère l'état global de l'application.
+BookList.js : Composant qui affiche la liste des livres en fonction des filtres et de la recherche.
+BookCard.js : Composant qui représente chaque livre individuellement.
+SearchBar.js : Composant pour la barre de recherche.
+FilterButtons.js : Composant pour les boutons de filtre.
+books.json : Fichier contenant les données des livres.
+main.scss : Fichier de style principal pour la mise en page et le design.
+Technologies Utilisées
+React : Bibliothèque JavaScript pour construire l'interface utilisateur.
+SCSS : Préprocesseur CSS pour des styles plus puissants et modulaires.
+LocalStorage : Pour la persistance locale des données (favoris et souhaits).
+Flexbox & Grid : Pour une mise en page responsive et flexible.
+Personnalisation
+Modifier les données des livres
 
-### Analyzing the Bundle Size
+Vous pouvez éditer le fichier books.json pour ajouter, supprimer ou modifier les livres de la collection.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Changer le thème ou les styles
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Personnalisez le fichier main.scss pour adapter les couleurs, les polices et le design général selon vos préférences.
