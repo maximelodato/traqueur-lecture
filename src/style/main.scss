@@ -1,0 +1,238 @@
+/* main.scss */
+
+/* Importer les polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Variables de couleur */
+$primary-color: #3f51b5;
+$secondary-color: #ff9800;
+$accent-color: #00bcd4;
+$background-color: #f9f9f9;
+$text-color: #212121;
+$border-color: #e0e0e0;
+
+/* Configuration de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+/* Conteneur principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* En-tête */
+header {
+  text-align: center;
+  padding: 60px 0;
+  background-color: $primary-color;
+  color: #fff;
+  background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 10%) 100%);
+
+  h1 {
+    font-size: 3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+/* Barre de recherche */
+.search-bar {
+  margin: 30px 0;
+  text-align: center;
+
+  input[type='text'] {
+    width: 80%;
+    max-width: 600px;
+    padding: 15px 25px;
+    border: 1px solid $border-color;
+    border-radius: 50px;
+    font-size: 1.1em;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:focus {
+      border-color: $accent-color;
+      box-shadow: 0 0 0 4px rgba($accent-color, 0.2);
+    }
+  }
+}
+
+/* Boutons de filtre */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 40px;
+
+  button {
+    background-color: $secondary-color;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      transform: translateY(-2px);
+    }
+
+    &.active {
+      background-color: $accent-color;
+    }
+  }
+}
+
+/* Liste des livres */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+/* Carte de livre */
+.book-card {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .book-info {
+    padding: 20px;
+    flex-grow: 1;
+
+    h2 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: $primary-color;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 0.95em;
+      line-height: 1.6;
+      color: darken($text-color, 20%);
+      margin-bottom: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .book-actions {
+    padding: 15px 20px;
+    border-top: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      flex: 1;
+      margin: 0 5px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      border-radius: 30px;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-2px);
+      }
+
+      &.favorite {
+        background-color: $secondary-color;
+
+        &:hover {
+          background-color: darken($secondary-color, 10%);
+        }
+      }
+
+      /* Ajouter des icônes (Optionnel si vous utilisez Font Awesome ou une autre bibliothèque) */
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* Pied de page */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: $primary-color;
+  color: #fff;
+
+  p {
+    font-size: 1em;
+  }
+}
+
+/* Media Queries pour responsive design */
+@media (max-width: 768px) {
+  .search-bar input[type='text'] {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .book-info h2 {
+    font-size: 1.2em;
+  }
+
+  .book-actions button {
+    font-size: 0.8em;
+  }
+}
